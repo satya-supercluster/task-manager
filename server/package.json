@@ -15,5 +15,18 @@
   "bugs": {
     "url": "https://github.com/satya-supercluster/task-manager/issues"
   },
-  "homepage": "https://github.com/satya-supercluster/task-manager#readme"
+  "homepage": "https://github.com/satya-supercluster/task-manager#readme",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^9.0.0",
+    "morgan": "^1.10.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
 }
