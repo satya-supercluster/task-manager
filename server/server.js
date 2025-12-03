@@ -11,6 +11,9 @@ dotenv.config();
 const authRoutes = require('./routes/authRoutes');
 const taskRoutes = require('./routes/taskRoutes');
 
+// Cron job to keep server awake
+require('./jobs/cron');
+
 // Initialize express app
 const app = express();
 
