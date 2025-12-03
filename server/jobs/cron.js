@@ -4,7 +4,7 @@ const https = require('https');
 
 // Replace with your actual backend API endpoint
 const backendUrl = "https://task-manager-satya.onrender.com";
-const job = new cron.CronJob('*/1 * * * *', function () {
+const job = new cron.CronJob('*/5 * * * *', function () {
   // This function will be executed every 5 minutes.
   // console.log(Hitting backend endpoint to keep server alive...);
 
