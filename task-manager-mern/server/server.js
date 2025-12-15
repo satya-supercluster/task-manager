@@ -22,7 +22,7 @@ connectDB();
 
 // Middleware
 app.use(cors({
-  origin: 'https://task-manager-rachna.netlify.app',
+  origin: process.env.CLIENT_URL,
   credentials: true
 }));
 app.use(express.json());

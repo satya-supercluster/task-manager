@@ -5,10 +5,12 @@ A full-stack Task Manager application built with MongoDB, Express, React (Vite),
 ## Project Structure
 
 ```
-task-manager/
+task-manager-mern/
 ├── server/
 │   ├── config/
 │   │   └── database.js
+│   ├── jobs/
+│   │   └── cron.js
 │   ├── controllers/
 │   │   ├── authController.js
 │   │   └── taskController.js
@@ -43,9 +45,10 @@ task-manager/
     │   ├── main.jsx
     │   └── index.css
     ├── index.html
+    ├── .env
+    ├── netlify.toml
     ├── vite.config.js
-    ├── tailwind.config.js
-    ├── postcss.config.js
+    ├── eslint.config.js
     └── package.json
 ```
 
@@ -128,13 +131,20 @@ npm install
 
 ### 3. Configure Environment Variables
 
-Create a `.env` file in the `server` folder:
+Create a `.env` file in the `server` folder:  
 
 ```env
 PORT=5000
 MONGODB_URI=mongodb://localhost:27017/taskmanager
 JWT_SECRET=your_jwt_secret_key_here_change_in_production
 NODE_ENV=development
+CLIENT_URL=http://localhost:5173
+```
+
+Create a `.env` file in the `client` folder:  
+
+```env
+VITE_BASE_URL=http://localhost:5000
 ```
 
 **Important:** Change the JWT_SECRET to a strong random string in production.
@@ -275,7 +285,3 @@ For production deployment, you should:
 - React Documentation: <https://react.dev/>
 - Vite Documentation: <https://vitejs.dev/>
 - Tailwind CSS Documentation: <https://tailwindcss.com/>
-
-## License
-
-This project is created for educational purposes.

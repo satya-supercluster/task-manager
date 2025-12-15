@@ -1,0 +1,17 @@
+# 1. Login to GCP
+gcloud auth login
+gcloud config set project YOUR_PROJECT_ID
+
+# 2. Enable APIs
+gcloud services enable containerregistry.googleapis.com run.googleapis.com
+
+# 3. Build Image using Cloud Build (No local Docker needed)
+gcloud builds submit --tag gcr.io/YOUR_PROJECT_ID/task-manager-api
+
+# 4. Deploy to Cloud Run
+gcloud run deploy task-manager-api \
+  --image gcr.io/YOUR_PROJECT_ID/task-manager-api \
+  --platform managed \
+  --region us-central1 \
+  --allow-unauthenticated \
+  --set-env-vars SPRING_DATASOURCE_URL=jdbc:postgresql://<DB_IP>:5432/taskdb,SPRING_DATASOURCE_PASSWORD=secret
